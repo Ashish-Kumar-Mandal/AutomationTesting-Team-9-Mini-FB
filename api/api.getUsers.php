@@ -8,7 +8,7 @@ require "dbc.php";
 	if(isset($_SESSION['session_id'])){
 		$login_id = $_SESSION['session_id'];
 		
-		$query = mysqli_query($dbc, "SELECT * FROM users WHERE usr_id!='$login_id' AND usr_id NOT IN (SELECT login_id FROM friends) AND usr_id NOT IN (SELECT request_id FROM friends)");
+		$query = mysqli_query($dbc, "SELECT * FROM users WHERE usr_id!='$login_id' AND usr_id NOT IN (SELECT login_id FROM friends WHERE request_id='$login_id') AND usr_id NOT IN (SELECT request_id FROM friends WHERE login_id='$login_id')");
 
 		if(mysqli_num_rows($query) > 0){
 			while ($row = mysqli_fetch_all($query, MYSQLI_ASSOC)) {
