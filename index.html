@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AutomationTesting-Team-9-Mini-FB</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="body">
+  <section>
+    <div class="row">
+      <div class="nav">
+        <span id="center-nav"><center>AutomationTesting-Team-9 (Mini-FB)</center></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="login-form">
+    <form id="loginForm" onsubmit="return verifyInfo()">
+
+      <fieldset class="fieldset">
+        <legend class="legend">Users Login</legend>
+        <table>
+        <tr>
+          <td>Mobile :</td>
+          <td><input type="text" name="mob" id="mob" placeholder="Enter Mobile No..."></td>
+        </tr>
+        <tr>
+          <td>Password :</td>
+          <td><input type="password" name="pass" id="pass" placeholder="Enter Password..."></td>
+        </tr>
+        <tr>
+          <td><a href="javascript:void(0)" class="btn" id="login-btn">Signup</a></td>
+          <td><input type="submit" name="login" id="login" value="Login"></td>
+        </tr>
+      </table>
+      </fieldset>
+    </form>
+
+    <form id="signupForm" style="display: none;">
+      <fieldset class="fieldset">
+        <legend class="legend">Users Signup</legend>
+        <table>
+          <tr>
+            <td>Name :</td>
+            <td><input type="text" name="name" id="name" placeholder="Enter Name..."></td>
+          </tr>
+          <tr>
+            <td>Mobile :</td>
+            <td><input type="text" name="mobile" id="mobile" placeholder="Enter Mobile..."></td>
+          </tr>
+          <tr>
+            <td>Email :</td>
+            <td><input type="email" name="email" id="email" placeholder="Enter Email..."></td>
+          </tr>
+          <tr>
+            <td>Password :</td>
+            <td><input type="password" name="password" id="password" placeholder="Enter Password..."></td>
+          </tr>
+          <tr>
+            <td><a href="javascript:void(0)" class="btn" id="signup-btn">Login</a></td>
+            <td><input type="submit" name="signup" id="signup" value="Signup"></td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </section>
+
+  <div id="error-message" class="messages"></div>
+  <div id="success-message" class="messages"></div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/myApp.js"></script>
+</body>
+</html>

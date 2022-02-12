@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AutomationTesting-Team-9-Mini-FB</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <section>
+    <div class="row">
+      <div class="nav">
+        <span id="left-nav"><a href="./api/api.logout.php"> Logout </a></span>
+        <span id="center-nav"><center>AutomationTesting-Team-9 (Mini-FB)</center></span>
+        <span id="right-nav">
+          <a href="./dashboard.html"> Dashboard </a>
+          <a href="./friend.html"> Friends </a>
+          <b> Hi: <span id="hi-user"></span></b>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="col-66">
+      <span class="heading">New Updates</span>
+      <p id="load-data" class="row-text"></p>
+    </div>
+    <div class="col-33">
+      <form>
+        <span class="heading">Send Messages</span>
+        <textarea id="notice"style="outline: none;border-radius: 5px;width: 98%; height:200px; border: none; resize: unset; padding: 5px 10px; margin-bottom: 10px; font-size: 18px;" placeholder="Enter any new updates for your friends..."></textarea>
+        <input type="submit" name="addNotice" id="addNotice" value="Notice Published" />
+      </form>
+    </div>
+  </section>
+
+  <div id="error-message" class="messages"></div>
+  <div id="success-message" class="messages"></div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/myApp.js"></script>
+<script>
+  viewProfile();
+  getAllNotices();
+</script>
+</body>
+</html>
