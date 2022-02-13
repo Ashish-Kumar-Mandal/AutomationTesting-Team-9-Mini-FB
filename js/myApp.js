@@ -23,7 +23,7 @@ const mobileNumberInput = ()=>{ // in HTML field using onkeypress="return mobile
   let response = false;
   if(numVal.length < 1){
     ((e.which>=54 && e.which<=57) || e.which==8 || e.which==127) ? response=true : response=false;
-  }else if(numVal.length > 10){
+  }else if(numVal.length >= 10){
     response=false;
   }else{
     ((e.which>=48 && e.which<=57) || e.which==8 || e.which==127) ? response=true : response=false;
