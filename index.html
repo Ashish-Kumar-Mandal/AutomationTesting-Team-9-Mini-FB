@@ -23,11 +23,11 @@
         <legend class="legend">Users Login</legend>
         <table>
         <tr>
-          <td>Mobile :</td>
-          <td><input type="text" name="mob" id="mob" placeholder="Enter Mobile No..."></td>
+          <td>Mobile:</td>
+          <td><input type="text" name="mob" id="mob" placeholder="Enter Mobile No..." onkeypress=" return mobileNumberInput()"></td>
         </tr>
         <tr>
-          <td>Password :</td>
+          <td>Password:</td>
           <td><input type="password" name="pass" id="pass" placeholder="Enter Password..."></td>
         </tr>
         <tr>
@@ -43,20 +43,20 @@
         <legend class="legend">Users Signup</legend>
         <table>
           <tr>
-            <td>Name :</td>
-            <td><input type="text" name="name" id="name" placeholder="Enter Name..."></td>
+            <td>Name:</td>
+            <td><input type="text" name="name" id="name" placeholder="Enter Name..." onkeypress="return nameInput()"></td>
           </tr>
           <tr>
-            <td>Mobile :</td>
-            <td><input type="text" name="mobile" id="mobile" placeholder="Enter Mobile..."></td>
+            <td>Mobile:</td>
+            <td><input type="text" name="mobile" id="mobile" placeholder="Enter Mobile..." onkeypress=" return mobileNumberInput()"></td>
           </tr>
           <tr>
-            <td>Email :</td>
+            <td>Email:</td>
             <td><input type="email" name="email" id="email" placeholder="Enter Email..."></td>
           </tr>
           <tr>
-            <td>Password :</td>
-            <td><input type="password" name="password" id="password" placeholder="Enter Password..."></td>
+            <td>Password:</td>
+            <td><input type="password" name="password" id="password" placeholder="Enter Password..." onkeyup="return validPasswordInput('error')"><span id="error" style="font-size: 12px;"></span></td>
           </tr>
           <tr>
             <td><a href="javascript:void(0)" class="btn" id="signup-btn">Login</a></td>

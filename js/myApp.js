@@ -1,3 +1,56 @@
+// const formValidate = (){
+//   let response = false;
+//   // (emailVal.match(/[a-zA-Z0-9]{3,}[\@][a-zA-Z]{2,}[\.][a-zA-Z]{2,}/i)) ? response=true : response=false;
+
+//   return response;
+// }
+
+// verify fields and forms
+const nameInput = ()=>{ // in HTML field using onkeypress="return nameInput()
+  const e = window.event;
+  const fieldId = document.getElementById(window.event.target.id); 
+
+  let response = false;
+  ((e.which>=65 && e.which<=90) || (e.which>=97 && e.which<=122) || e.which==95 || e.which==32 || e.which==8 || e.which==127) ? response=true : response=false;
+  return response;
+}
+
+const mobileNumberInput = ()=>{ // in HTML field using onkeypress="return mobileNumberInput()
+  const e = window.event;
+  const fieldId = document.getElementById(window.event.target.id);
+  let numVal = fieldId.value;
+
+  let response = false;
+  if(numVal.length < 1){
+    ((e.which>=54 && e.which<=57) || e.which==8 || e.which==127) ? response=true : response=false;
+  }else if(numVal.length > 10){
+    response=false;
+  }else{
+    ((e.which>=48 && e.which<=57) || e.which==8 || e.which==127) ? response=true : response=false;
+  }
+  return response;
+}
+
+const validPasswordInput = (error='', passLen=6)=>{ // in HTML field using onkeyup="return validPasswordInput('error')
+  const e = window.event;
+  const fieldId = document.getElementById(window.event.target.id);
+  let errId, result, passVal=fieldId.value;
+ 
+  error ? errId=document.getElementById(error) : errId='';
+
+  result = (passVal.match(/[a-z]/g) && passVal.match(/[A-Z]/g) && passVal.match(/[0-9]/g) && passVal.match(/[^a-zA-Z\d]/g) && passVal.length >= passLen);
+
+  if(result || (passVal.length <= 0)){
+    errId.innerHTML = "";
+  }else{
+    errId.innerHTML = "Password length must be <b>"+passLen+"</b> characters,<br> and contain atleast one <b>Upper</b> and <b>Lower case</b> and also <b>Numeric</b> and <b>Special Symbols</b>." ;
+    errId.style.color='#f00';
+  }
+
+  return true;
+}
+/***********************************************************************************/
+
   // function for Show Success or Error Messages
   function message(message, status){
     if(status == true){
@@ -227,9 +280,9 @@
   $("#signup").on("click",function(e){
     e.preventDefault();
 
-      const name = $('#name').val();
+      const name = $('#name').val().trim();
       const mobile = $('#mobile').val();
-      const email = $('#email').val();
+      const email = $('#email').val().trim();
       const password = $('#password').val();
 
       if(name == "" || mobile == "" || email == "" || password == ""){
